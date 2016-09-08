@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Application Form</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container col-md-4 col-md-offset-4">
+	<form name="vm.userForm" ng-controller="User as vm" novalidate>
+		<formly-form model="vm.user" fields="vm.userFields" form="vm.userForm">
+		<button class="btn btn-primary btn upload" upload-button url="/cv" param="file"
+			required="true">Upload CV</button>
+		<button type="submit" class="btn btn-primary" ng-submit="vm.onSubmit()">Submit</button>
+	</formly-form>
+	</form>
+</div>
+
+
+<!-- <div>
+	<h1>TEST ANGULARJS</h1>
+	<label>Name:</label>
+	<input type="text" ng-model="yourName" placeholder="Enter a name here">
+	<hr>
+	<h1>Hello {{yourName}}!</h1>
+</div>
+
+<div ng-controller="User">
+	<h1>TEST CONTROLLER</h1>
+	{{ test }}
+</div> -->
+
+<!-- angular dependency -->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="bower_components/api-check/dist/api-check.min.js"></script>
+<script src="bower_components/angular-formly/dist/formly.min.js"></script>
+<script src="bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.min.js"></script>
+<script src="bower_components/angular-upload/angular-upload.min.js"></script>
+<!-- main module -->
+<script src="app.js"></script>
+<script src="app/core/core.module.js"></script>
+<script src="app/core/jobposition.js"></script>
+<script src="app/core/province.js"></script>
+
+<!-- controllers -->
+<script src="user.js"></script>
+</body>
+</html>
